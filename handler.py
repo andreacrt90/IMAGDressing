@@ -24,7 +24,7 @@ def handler(event):
             "--cloth_path", cloth_path,
             "--face_path", face_path,
             "--output_path", output_file,
-            "--device", "cpu"  # CPU o GPU, se disponibile
+            "--device", "cuda"
         ]
 
         # Esecuzione comando
