@@ -71,7 +71,7 @@ zipp==3.18.1
 fastapi
 uvicorn
 python-multipart
-# torch==2.1.2  messo nel dockerfile
+torch==2.1.2
 diffusers
 transformers
 opencv-python-headless
