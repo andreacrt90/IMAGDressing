@@ -20,7 +20,7 @@ WORKDIR /app
 
 # Copia requirements
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt --verbose
 
 # Installa libreria RunPod
 RUN pip install runpod
