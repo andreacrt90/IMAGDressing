@@ -20,6 +20,13 @@ WORKDIR /app
 
 # Copia requirements
 COPY requirements.txt .
+
+# copia la cartella DeepSpeed (se esiste nella root della repo)
+COPY DeepSpeed/ ./DeepSpeed/
+
+# (IMPORTANTE) assicurati che git sia installato PRIMA di pip, se usi VCS in requirements
+RUN apt-get update && apt-get install -y --no-install-recommends git
+
 RUN pip install --no-cache-dir -r requirements.txt --verbose
 
 # Installa libreria RunPod
