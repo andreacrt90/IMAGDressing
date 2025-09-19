@@ -24,8 +24,18 @@ COPY requirements.txt .
 # copia la cartella DeepSpeed (se esiste nella root della repo)
 COPY DeepSpeed/ ./DeepSpeed/
 
-# (IMPORTANTE) assicurati che git sia installato PRIMA di pip, se usi VCS in requirements
-RUN apt-get update && apt-get install -y --no-install-recommends git
+# ------------------------------
+# Installa pacchetti di sistema (inclusi per insightface)
+# ------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    build-essential \
+    cmake \
+    libgl1 \
+    libglib2.0-0 \
+    python3-dev \
+    libopencv-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN pip install insightface==0.7.3
 
