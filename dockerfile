@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libopencv-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install insightface
+RUN pip install insightface==0.7.4
 
 RUN pip install --no-cache-dir -r requirements.txt --verbose
 
