@@ -186,5 +186,3 @@ checkpoints/
 testdata/
 output_*/
 ckpt/
-
-DeepSpeed/
