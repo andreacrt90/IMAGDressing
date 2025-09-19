@@ -78,9 +78,10 @@ torchaudio==2.1.2
 diffusers
 transformers
 opencv-python-headless
-insightface
+# insightface
 onnxruntime
 Pillow
+# subprocess
 
 
 # Installa DeepSpeed localmente da una repo modificata

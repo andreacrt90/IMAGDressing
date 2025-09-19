@@ -27,6 +27,8 @@ COPY DeepSpeed/ ./DeepSpeed/
 # (IMPORTANTE) assicurati che git sia installato PRIMA di pip, se usi VCS in requirements
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
+RUN pip install insightface==0.7.3
+
 RUN pip install --no-cache-dir -r requirements.txt --verbose
 
 # Installa libreria RunPod
