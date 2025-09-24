@@ -28,16 +28,19 @@ COPY DeepSpeed/ ./DeepSpeed/
 # Installa pacchetti di sistema (inclusi per insightface)
 # ------------------------------
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
     build-essential \
     cmake \
+    git \
+    python3-dev \
     libgl1 \
     libglib2.0-0 \
-    python3-dev \
+    libsm6 \
+    libxrender1 \
+    libxext6 \
     libopencv-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install git+https://github.com/deepinsight/insightface.git
+RUN pip install insightface==0.7.3 --no-build-isolation
 
 RUN pip install --no-cache-dir -r requirements.txt --verbose
 
